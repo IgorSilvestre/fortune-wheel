@@ -10,7 +10,7 @@ export async function getWheelOptions() {
 
 export async function addWheelOption(text: string) {
   if (!text || text.length < 3 || text.length > 20) {
-    return { error: 'Option must be between 3 and 20 characters.' };
+    return { error: 'A opção deve ter entre 3 e 20 caracteres.' };
   }
 
   try {
@@ -21,9 +21,9 @@ export async function addWheelOption(text: string) {
     return { success: true };
   } catch (error: unknown) {
     if (typeof error === 'object' && error !== null && 'code' in error && (error as { code: string }).code === 'SQLITE_CONSTRAINT_UNIQUE') {
-      return { error: 'This option already exists.' };
+      return { error: 'Esta opção já existe.' };
     }
-    return { error: 'An error occurred while adding the option.' };
+    return { error: 'Ocorreu um erro ao adicionar a opção.' };
   }
 }
 
@@ -35,13 +35,13 @@ export async function deleteWheelOption(id: number) {
     revalidatePath('/manage');
     return { success: true };
   } catch {
-    return { error: 'Failed to delete option.' };
+    return { error: 'Falha ao excluir opção.' };
   }
 }
 
 export async function saveResult(userId: string, name: string, optionWon: string) {
   if (!userId || !name || !optionWon) {
-    return { error: 'Missing required fields.' };
+    return { error: 'Campos obrigatórios ausentes.' };
   }
 
   try {
@@ -50,7 +50,7 @@ export async function saveResult(userId: string, name: string, optionWon: string
     revalidatePath('/results');
     return { success: true };
   } catch {
-    return { error: 'Failed to save result.' };
+    return { error: 'Falha ao salvar resultado.' };
   }
 }
 

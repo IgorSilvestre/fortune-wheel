@@ -14,8 +14,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Fortune Wheel",
-  description: "Spin the wheel and win!",
+  title: "Roda da Fortuna",
+  description: "Gire a roda e ganhe!",
 };
 
 export default function RootLayout({
@@ -24,32 +24,32 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="pt-BR">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col`}
       >
         <nav className="bg-red-600 text-white shadow-md">
           <div className="max-w-4xl mx-auto px-4">
             <div className="flex items-center justify-between h-16">
-              <span className="font-bold text-xl tracking-tight">Fortune Wheel</span>
+              <span className="font-bold text-xl tracking-tight">Roda da Fortuna</span>
               <div className="flex space-x-4">
                 <Link
                   href="/"
                   className="px-3 py-2 rounded-md text-sm font-medium hover:bg-red-700 transition-colors"
                 >
-                  Home
+                  Início
                 </Link>
                 <Link
                   href="/manage"
                   className="px-3 py-2 rounded-md text-sm font-medium hover:bg-red-700 transition-colors"
                 >
-                  Manage Options
+                  Gerenciar Opções
                 </Link>
                 <Link
                   href="/results"
                   className="px-3 py-2 rounded-md text-sm font-medium hover:bg-red-700 transition-colors"
                 >
-                  Results
+                  Resultados
                 </Link>
               </div>
             </div>

@@ -23,8 +23,8 @@ export default function Results() {
   return (
     <div className="max-w-4xl mx-auto space-y-8">
       <div>
-        <h1 className="text-3xl font-bold mb-2">Spin Results</h1>
-        <p className="text-gray-600 dark:text-gray-400">See who spun the wheel and what they won.</p>
+        <h1 className="text-3xl font-bold mb-2">Resultados dos Giros</h1>
+        <p className="text-gray-600 dark:text-gray-400">Veja quem girou a roda e o que ganharam.</p>
       </div>
 
       <div className="bg-white dark:bg-gray-800 shadow-md rounded-lg overflow-hidden border border-gray-200 dark:border-gray-700">
@@ -32,23 +32,23 @@ export default function Results() {
           <table className="w-full text-left border-collapse">
             <thead>
               <tr className="bg-gray-50 dark:bg-gray-900 border-b border-gray-200 dark:border-gray-700">
-                <th className="px-6 py-4 font-semibold text-sm text-gray-700 dark:text-gray-300">ID (Fingerprint)</th>
-                <th className="px-6 py-4 font-semibold text-sm text-gray-700 dark:text-gray-300">Name</th>
-                <th className="px-6 py-4 font-semibold text-sm text-gray-700 dark:text-gray-300">Prize Won</th>
-                <th className="px-6 py-4 font-semibold text-sm text-gray-700 dark:text-gray-300">Date</th>
+                <th className="px-6 py-4 font-semibold text-sm text-gray-700 dark:text-gray-300">ID (Impressão Digital)</th>
+                <th className="px-6 py-4 font-semibold text-sm text-gray-700 dark:text-gray-300">Nome</th>
+                <th className="px-6 py-4 font-semibold text-sm text-gray-700 dark:text-gray-300">Prêmio Ganho</th>
+                <th className="px-6 py-4 font-semibold text-sm text-gray-700 dark:text-gray-300">Data</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-gray-200 dark:divide-gray-700">
               {loading ? (
                 <tr>
                   <td colSpan={4} className="px-6 py-8 text-center text-gray-500">
-                    Loading results...
+                    Carregando resultados...
                   </td>
                 </tr>
               ) : results.length === 0 ? (
                 <tr>
                   <td colSpan={4} className="px-6 py-8 text-center text-gray-500">
-                    No results found. Spin the wheel to see records here!
+                    Nenhum resultado encontrado. Gire a roda para ver os registros aqui!
                   </td>
                 </tr>
               ) : (
@@ -64,7 +64,7 @@ export default function Results() {
                       {result.option_won}
                     </td>
                     <td className="px-6 py-4 text-sm text-gray-500 dark:text-gray-400">
-                      {new Date(result.created_at).toLocaleString()}
+                      {new Date(result.created_at).toLocaleString('pt-BR')}
                     </td>
                   </tr>
                 ))
