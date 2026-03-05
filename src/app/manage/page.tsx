@@ -71,7 +71,7 @@ export default function ManageOptions() {
           </div>
           <button
             type="submit"
-            className="px-6 py-2 bg-red-600 text-white font-medium rounded-md hover:bg-red-700 transition-colors"
+            className="px-6 py-2 bg-red-600 text-white font-medium rounded-md hover:bg-red-700 transition-colors cursor-pointer"
           >
             Add
           </button>
@@ -94,7 +94,7 @@ export default function ManageOptions() {
                 <span className="font-medium">{option.text}</span>
                 <button
                   onClick={() => handleDelete(option.id)}
-                  className="text-red-500 hover:text-red-700 hover:bg-red-50 dark:hover:bg-red-900/20 px-3 py-1 rounded-md transition-colors text-sm"
+                  className="text-red-500 hover:text-red-700 hover:bg-red-50 dark:hover:bg-red-900/20 px-3 py-1 rounded-md transition-colors text-sm cursor-pointer"
                 >
                   Delete
                 </button>

@@ -209,7 +209,7 @@ export default function Home() {
           className={`w-full py-4 rounded-lg font-bold text-lg uppercase tracking-wider text-white transition-all shadow-lg
             ${isSpinning || options.length === 0
               ? 'bg-gray-400 cursor-not-allowed shadow-none'
-              : 'bg-gradient-to-r from-red-600 to-red-500 hover:from-red-500 hover:to-red-400 hover:shadow-red-500/30 transform hover:-translate-y-1'
+              : 'bg-gradient-to-r from-red-600 to-red-500 hover:from-red-500 hover:to-red-400 hover:shadow-red-500/30 transform hover:-translate-y-1 cursor-pointer'
             }`}
         >
           {isSpinning ? 'Spinning...' : 'Spin the Wheel!'}
@@ -244,7 +244,7 @@ export default function Home() {
             </div>
             <button
               onClick={() => setWinner(null)}
-              className="mt-8 px-8 py-3 bg-gray-900 text-white rounded-full font-bold hover:bg-gray-800 transition-colors"
+              className="mt-8 px-8 py-3 bg-gray-900 text-white rounded-full font-bold hover:bg-gray-800 transition-colors cursor-pointer"
             >
               Awesome!
             </button>
