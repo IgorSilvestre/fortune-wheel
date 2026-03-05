@@ -44,7 +44,7 @@ export default function Home() {
       ctx.font = '20px sans-serif';
       ctx.textAlign = 'center';
       ctx.textBaseline = 'middle';
-      ctx.fillText('No options added yet', center.x, center.y);
+      ctx.fillText('Nenhuma opção adicionada ainda', center.x, center.y);
       return;
     }
 
@@ -110,11 +110,11 @@ export default function Home() {
 
   const handleSpin = async () => {
     if (options.length === 0) {
-      setError('Please add some options first!');
+      setError('Por favor, adicione algumas opções primeiro!');
       return;
     }
     if (!name.trim()) {
-      setError('Please enter your name to spin!');
+      setError('Por favor, insira seu nome para girar!');
       return;
     }
     if (isSpinning) return;
@@ -184,13 +184,13 @@ export default function Home() {
   return (
     <div className="max-w-4xl mx-auto flex flex-col items-center py-8">
       <h1 className="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-red-400 mb-8 text-center drop-shadow-sm">
-        Spin to Win!
+        Gire para Ganhar!
       </h1>
 
       <div className="w-full max-w-md bg-white dark:bg-gray-800 p-6 rounded-xl shadow-xl border border-gray-100 dark:border-gray-700 mb-10 transform transition-all hover:scale-[1.01]">
         <div className="mb-4">
           <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-            Enter your name
+            Insira seu nome
           </label>
           <input
             id="name"
@@ -199,7 +199,7 @@ export default function Home() {
             onChange={(e) => setName(e.target.value)}
             disabled={isSpinning}
             className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500 dark:bg-gray-700 dark:text-white transition-shadow"
-            placeholder="John Doe"
+            placeholder="João da Silva"
           />
         </div>
         {error && <p className="text-red-500 text-sm mb-4 font-medium animate-pulse">{error}</p>}
@@ -212,7 +212,7 @@ export default function Home() {
               : 'bg-gradient-to-r from-red-600 to-red-500 hover:from-red-500 hover:to-red-400 hover:shadow-red-500/30 transform hover:-translate-y-1 cursor-pointer'
             }`}
         >
-          {isSpinning ? 'Spinning...' : 'Spin the Wheel!'}
+          {isSpinning ? 'Girando...' : 'Girar a Roda!'}
         </button>
       </div>
 
@@ -235,9 +235,9 @@ export default function Home() {
         <div className="fixed inset-0 flex items-center justify-center z-50 pointer-events-none">
           <div className="bg-black/60 absolute inset-0 backdrop-blur-sm transition-opacity"></div>
           <div className="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-2xl relative z-10 text-center animate-bounce pointer-events-auto border-4 border-red-500">
-            <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">🎉 We have a winner! 🎉</h2>
+            <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">🎉 Temos um vencedor! 🎉</h2>
             <p className="text-xl text-gray-700 dark:text-gray-300">
-              Congratulations <span className="font-bold text-red-600">{name}</span>, you won:
+              Parabéns <span className="font-bold text-red-600">{name}</span>, você ganhou:
             </p>
             <div className="mt-6 text-5xl font-extrabold text-red-600 drop-shadow-md">
               {winner}
@@ -246,7 +246,7 @@ export default function Home() {
               onClick={() => setWinner(null)}
               className="mt-8 px-8 py-3 bg-gray-900 text-white rounded-full font-bold hover:bg-gray-800 transition-colors cursor-pointer"
             >
-              Awesome!
+              Incrível!
             </button>
           </div>
         </div>
